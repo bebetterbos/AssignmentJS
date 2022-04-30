@@ -13,12 +13,12 @@
                     <input type="email" class="form-control" v-model="student.email" required>
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone Number</label>
+                    <label for="phone">Phone</label>
                     <input type="text" class="form-control" v-model="student.phone" required>
                 </div>
 
                 <div class="form-group">
-                    <button class="btn btn-success col-12 mt-3 ">Create</button>
+                    <button class="btn btn-success col-12 mt-3">Create</button>
                 </div>
             </form>
         </div>
@@ -31,19 +31,19 @@ export default {
     data() {
         return {
             student: {
-                name : '',
-                email : '',
-                phone : ''
+                name: '',
+                email: '',
+                phone: ''
             }
         }
     },
-    method: {
+    methods: {
         handleSubmitForm() {
             let apiURL = 'http://localhost:4000/api/create-student';
-            axios.post(apiURL,this.student).then(()=>{
+            axios.post(apiURL, this.student).then(() => {
                 this.$router.push('/view');
                 this.student = {
-                    name : '',
+                    name: '',
                     email: '',
                     phone: ''
                 }

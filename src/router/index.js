@@ -3,7 +3,6 @@ import CreateComponent from "@/components/CreateComponent.vue";
 import EditComponent from "@/components/EditComponent.vue";
 import ListComponent from "@/components/ListComponent.vue";
 
-
 const routes = [{
         path: "/",
         name: "home",
