@@ -3,7 +3,7 @@
         <div class="col-md-6">
             <!-- Content goes here -->
             <h1>Create Student</h1>
-            <form>
+            <form @submit.prevent="handleSubmitForm">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" class="form-control" v-model="student.name" required>
@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
     data() {
         return {
@@ -37,7 +38,19 @@ export default {
         }
     },
     method: {
-        handleSubmitForm() {}
+        handleSubmitForm() {
+            let apiURL = 'http://localhost:4000/api/create-student';
+            axios.post(apiURL,this.student).then(()=>{
+                this.$router.push('/view');
+                this.student = {
+                    name : '',
+                    email: '',
+                    phone: ''
+                }
+            }).catch(error => {
+                console.log(error)
+            })
+        }
     }
 }
 </script>

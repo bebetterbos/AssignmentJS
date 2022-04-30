@@ -1,3 +1,3 @@
 module.exports = {
-    db: 'mongodb://localhost:8080/vuecrud'
+    db: 'mongodb://localhost:27017/vuecrud'
 }

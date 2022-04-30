@@ -4,16 +4,15 @@ let express = require('express'),
     database = require('./database'),
     bodyParser = require('body-parser')
 
-//Connect
+// Connect MongoDB
 mongoose.Promise = global.Promise;
 mongoose.connect(database.db, {
-    usedNewUrlParser: true,
+    useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
-    console.log('Database connected successfully');
+    console.log('Database connected succesfully');
 }, error => {
-    console.log('Cannot connect to database' + error)
-
+    console.log('Cannot connect to database ' + error)
 })
 
 const studentAPI = require('../backend/routes/student.route');
@@ -22,20 +21,23 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
 }))
+app.use(cors());
 
+// API
 app.use('/api', studentAPI);
 
+// CREATE PORT
 const port = process.env.PORT || 4000;
 const server = app.listen(port, () => {
-    console.log('Connect to port ' + port)
+    console.log('Connected to port ' + port)
 })
 
-//404 Handler
+// 404 Handler
 app.use((req, res, next) => {
     next(createError(404))
 })
 
-//error Handler
+// error handler
 app.use(function(err, req, res, next) {
     console.error(err.message);
     if (!err.statusCode) err.statusCode = 500;
