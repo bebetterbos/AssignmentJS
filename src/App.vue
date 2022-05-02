@@ -9,7 +9,10 @@
             <router-link to="/" class="nav-link px-3">Create Student</router-link>            
           </li>
           <li class="nav-item">
-            <router-link to="/view" class="nav-link">View Student</router-link>
+            <router-link to="/view" class="nav-link px-3">View Student</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/login" class="nav-link">Login</router-link>
           </li>
         </ul>
       </div>
