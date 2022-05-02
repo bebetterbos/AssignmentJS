@@ -2,36 +2,25 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <!-- Display goes here -->
-            <h1>Show students</h1>
-            <div class="row">
-                <div class="col-md-12">
-                    <table class="table table-striped">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-for="student in Students" :key="student._id">
-                                <td>{{ student.name }}</td>
-                                <td>{{ student.email }}</td>
-                                <td>{{ student.phone }}</td>
-                                <td>
-                                    <router-link :to="{name: 'edit', params: {id: student._id}}" class="btn btn-success">
-                                        Edit
-                                    </router-link>
-                                    <button @click.prevent="deleteStudent(student._id)" class="btn btn-danger">
-                                        Delete
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            <center>
+            <h1>ประวัติการใช้งาน</h1>
+            </center>
+            <table class="table table-striped table-dark" align="center">
+                <thead class="thead-dark" align="center">
+                    <tr>
+                    <th scope="col">ชื่อ</th>
+                    <th scope="col">ประวัติการใช้งาน</th>
+                    <th scope="col">เวลา</th>
+                    </tr>
+                </thead>
+                <tbody align="center">
+                    <tr v-for="history in historys" :key="history._id">
+                    <td>{{  history.username  }}</td>
+                    <td>{{  history.history  }}</td>
+                    <td>{{  history.date  }}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </template>
@@ -41,29 +30,19 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            Students: []
+            historys: []
         }
     },
-    created() {
-        let apiURL = 'http://localhost:4000/api';
+    created(){
+        let apiURL = 'mongodb://localhost:4000/api/show-history';
         axios.get(apiURL).then(res => {
-            this.Students = res.data
+            this.historys = res.data
         }).catch(error => {
             console.log(error)
         })
     },
     methods: {
-        deleteStudent(id) {
-            let apiURL = `http://localhost:4000/api/delete-student/${id}`;
-            let indexOfArrayItem = this.Students.findIndex(i => i._id === id);
-            if (window.confirm("Do you really want to delete?")) {
-                axios.delete(apiURL).then(() => {
-                    this.Students.splice(indexOfArrayItem, 1)
-                }).catch(error => {
-                    console.log(error)
-                })
-            }
-        }
+      
     }
 }
 </script>

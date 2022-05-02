@@ -55,37 +55,40 @@ studentRoute.route('/update-student/:id').put((req, res, next) => {
 
 // Delete student data
 studentRoute.route('/delete-student/:id').delete((req, res, next) => {
-        StudentModel.findByIdAndDelete(req.params.id, (error, data) => {
-            if (error) {
-                return next(error)
-            } else {
-                res.status(200).json({
-                    msg: data
-                })
-            }
-        })
+    StudentModel.findByIdAndDelete(req.params.id, (error, data) => {
+        if (error) {
+            return next(error)
+        } else {
+            res.status(200).json({
+                msg: data
+            })
+        }
     })
-    // CREATE USER
+})
+
+// CREATE USER
 studentRoute.route('/create-user').post((req, res, next) => {
-        UserModel.create(req.body, (error, data) => {
-            if (error) {
-                return next(error)
-            } else {
-                res.json(data)
-            }
-        })
+    UserModel.create(req.body, (error, data) => {
+        if (error) {
+            return next(error)
+        } else {
+            res.json(data)
+        }
     })
-    // GET USER
+})
+
+// GET USER
 studentRoute.route('/show-user').get((req, res, next) => {
-        UserModel.find((error, data) => {
-            if (error) {
-                return next(error)
-            } else {
-                res.json(data)
-            }
-        })
+    UserModel.find((error, data) => {
+        if (error) {
+            return next(error)
+        } else {
+            res.json(data)
+        }
     })
-    // CREATE HISTORY
+})
+
+// CREATE HISTORY
 studentRoute.route('/create-history').post((req, res, next) => {
         HistoryModel.create(req.body, (error, data) => {
             if (error) {
