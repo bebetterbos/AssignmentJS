@@ -1,3 +1,4 @@
+
 <template>
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -20,8 +21,8 @@
                 </div>
                 <center>
                 <div class="clearfix">
-                <router-link to="/login"><button class="btn btn-danger" style="margin-right: 10%">Back</button></router-link>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <router-link to="/login"><button class="btn btn-danger mt-3" style="margin-right: 10%">Back</button></router-link>
+                <button type="submit" class="btn btn-primary mt-3">Submit</button>
                 </div>
                 </center>
             </form>

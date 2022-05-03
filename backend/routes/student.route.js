@@ -90,15 +90,16 @@ studentRoute.route('/show-user').get((req, res, next) => {
 
 // CREATE HISTORY
 studentRoute.route('/create-history').post((req, res, next) => {
-        HistoryModel.create(req.body, (error, data) => {
-            if (error) {
-                return next(error)
-            } else {
-                res.json(data)
-            }
-        })
+    HistoryModel.create(req.body, (error, data) => {
+        if (error) {
+            return next(error)
+        } else {
+            res.json(data)
+        }
     })
-    // GET HISTORY
+})
+
+// GET HISTORY
 studentRoute.route('/show-history').get((req, res, next) => {
     HistoryModel.find((error, data) => {
         if (error) {

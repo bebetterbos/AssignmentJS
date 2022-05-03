@@ -8,7 +8,7 @@ import history from "@/components/History.vue";
 
 const routes = [{
         path: "/",
-        name: "create",
+        name: "home",
         component: CreateComponent,
     },
     {
@@ -23,7 +23,7 @@ const routes = [{
     },
     {
         path: "/login",
-        name: "home",
+        name: "login",
         component: login,
     },
     {

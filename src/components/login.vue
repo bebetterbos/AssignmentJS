@@ -16,8 +16,8 @@
                 </div>
                 <center>
                 <div class="clearfix">
-                <router-link to="/register"><button class="btn btn-danger" style="margin-right: 10%">Signup</button></router-link>
-                <button type="submit" class="btn btn-primary" @click.prevent="checklogin(history.username,password)">Login</button>
+                <router-link to="/register"><button class="btn btn-danger mt-3" style="margin-right: 10%">Signup</button></router-link>
+                <button type="submit" class="btn btn-primary mt-3" @click.prevent="checklogin(history.username,password)">Login</button>
                 </div>
                 </center>
             </form>
@@ -39,7 +39,7 @@ export default {
         }
     },
     created() {
-        let apiURL = 'http://localhost:4000/api/show-data';
+        let apiURL = 'http://localhost:4000/api/show-user';
         axios.get(apiURL).then(res => {
             this.userpass = res.data
         }).catch(error => {
