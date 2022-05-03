@@ -5,22 +5,23 @@
             <center>
             <h1>ประวัติการใช้งาน</h1>
             </center>
-            <table class="table table-striped table-dark" align="center">
-                <thead class="thead-dark" align="center">
-                    <tr>
-                    <th scope="col">ชื่อ</th>
-                    <th scope="col">ประวัติการใช้งาน</th>
-                    <th scope="col">เวลา</th>
-                    </tr>
-                </thead>
-                <tbody align="center">
-                    <tr v-for="history in historys" :key="history._id">
-                    <td>{{  history.username  }}</td>
-                    <td>{{  history.history  }}</td>
-                    <td>{{  history.date  }}</td>
-                    </tr>
-                </tbody>
-            </table>
+           <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>ชื่อ</th>
+                                <th>ประวัติการใช้งาน</th>
+                                <th>เวลา</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="history in historys" :key="history._id">
+                                <td>{{ history.username }}</td>
+                                <td>{{ history.history }}</td>
+                                <td>{{ history.date }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
         </div>
     </div>
 </template>

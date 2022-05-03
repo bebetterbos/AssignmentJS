@@ -5,11 +5,16 @@ import ListComponent from "@/components/ListComponent.vue";
 import login from "@/components/login.vue";
 import register from "@/components/register.vue";
 import history from "@/components/History.vue";
+import Home from "@/components/Home.vue";
 
 const routes = [{
+        path: "/login",
+        name: "login",
+        component: login,
+    }, {
         path: "/",
         name: "home",
-        component: CreateComponent,
+        component: Home,
     },
     {
         path: "/view",
@@ -22,9 +27,9 @@ const routes = [{
         component: EditComponent,
     },
     {
-        path: "/login",
-        name: "login",
-        component: login,
+        path: "/createstudent",
+        name: "createstudent",
+        component: CreateComponent,
     },
     {
         path: "/register",

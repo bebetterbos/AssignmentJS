@@ -48,7 +48,7 @@ export default {
             let apiURL = 'http://localhost:4000/api/create-user';
 
             axios.post(apiURL, this.users).then(() => {
-                this.$router.push('/login');
+                this.$router.push('/');
                 this.users = {
                     username: '',
                     password: '',
