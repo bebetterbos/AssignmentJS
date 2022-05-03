@@ -1,3 +1,4 @@
+
 <template>
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -5,7 +6,7 @@
             <center>
             <h1>ประวัติการใช้งาน</h1>
             </center>
-           <table class="table table-striped">
+           <table class="table table-striped table-dark" align="center">
                         <thead class="thead-dark">
                             <tr>
                                 <th>ชื่อ</th>
@@ -35,7 +36,7 @@ export default {
         }
     },
     created(){
-        let apiURL = 'mongodb://localhost:4000/api/show-history';
+        let apiURL = 'http://localhost:4000/api/show-history';
         axios.get(apiURL).then(res => {
             this.historys = res.data
         }).catch(error => {

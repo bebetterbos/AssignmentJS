@@ -2,17 +2,20 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let subjectSchema = new Schema({
-    id: {
-        type: String
-    },
     name: {
         type: String
     },
-    section: {
+    teacher: {
         type: String
     },
-    credit: {
-        type: Number
+    day: {
+        type: String
+    },
+    hours: {
+        type: String
+    },
+    details: {
+        type: String
     }
 }, {
     collection: 'subjects'

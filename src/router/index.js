@@ -6,6 +6,9 @@ import login from "@/components/login.vue";
 import register from "@/components/register.vue";
 import history from "@/components/History.vue";
 import Home from "@/components/Home.vue";
+import CreateSubject from "@/components/CreateSubject.vue";
+import ListSubject from "@/components/ListSubject.vue";
+import EditSubject from "@/components/EditSubject.vue";
 
 const routes = [{
         path: "/login",
@@ -40,6 +43,21 @@ const routes = [{
         path: "/history",
         name: "history",
         component: history,
+    },
+    {
+        path: "/createsubject",
+        name: "createsubject",
+        component: CreateSubject,
+    },
+    {
+        path: "/viewsubject",
+        name: "viewsubject",
+        component: ListSubject,
+    },
+    {
+        path: "/editsubject/:id",
+        name: "editsubject",
+        component: EditSubject,
     }
 ];
 

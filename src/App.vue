@@ -7,6 +7,14 @@
         <router-link to="/" class="navbar-brand float-left">KMUTNB Acardemy</router-link>
         <ul class="nav navbar-nav flex-row float-right">
           <li class="nav-item">
+            <router-link to="/createsubject" class="nav-link px-3 disabled"  v-if="username == ''">Create Subject</router-link>
+            <router-link to="/createsubject" class="nav-link px-3"   v-else>Create Subject</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/viewsubject" class="nav-link px-3 disabled" v-if="username == ''">View Subject</router-link>
+            <router-link to="/viewsubject" class="nav-link px-3" v-else>View Subject</router-link>
+          </li>
+          <li class="nav-item">
             <router-link to="/createstudent" class="nav-link px-3 disabled" v-if="username == ''">Create Student</router-link>
             <router-link to="/createstudent" class="nav-link px-3" v-else>Create Student</router-link>            
           </li>
@@ -22,6 +30,7 @@
             <router-link to="/login" class="nav-link active" @click="login" v-if="username == ''">Login</router-link>
             <router-link to="/" class="nav-link active"  @click="logout" v-else>Logout</router-link>
           </li>
+          
         </ul>
       </div>
     </nav>
