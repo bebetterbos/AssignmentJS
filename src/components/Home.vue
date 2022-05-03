@@ -75,7 +75,7 @@ export default {
         }).catch(error => {
             console.log(error)
         })
-        let apiURL3 = 'http://localhost:4000/api/show-user';
+        let apiURL3 = 'http://localhost:4000/api/show-student';
         axios.get(apiURL3).then(res => {
             this.students = res.data
         }).catch(error => {

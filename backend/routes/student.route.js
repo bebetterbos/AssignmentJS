@@ -112,6 +112,17 @@ studentRoute.route('/show-history').get((req, res, next) => {
 })
 
 //Show Subject
+studentRoute.route('/show-student').get((req, res, next) => {
+    StudentModel.find((error, data) => {
+        if (error) {
+            return next(error)
+        } else {
+            res.json(data)
+        }
+    })
+})
+
+//Show Subject
 studentRoute.route('/show-subject').get((req, res, next) => {
     SubjectModel.find((error, data) => {
         if (error) {
